@@ -72,6 +72,10 @@ const paddingCSS = {
   full: css`
     padding: 16px 0;
   `,
+  fullWidth: css`
+    width: 100%;
+    padding: 16px 100px;
+  `,
 };
 
 // 배경색 변형

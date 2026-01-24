@@ -1,6 +1,5 @@
 import React from 'react';
 import S from './style';
-import { Link } from 'react-router-dom';
 import BaseButton from '../button/BaseButton.jsx';
 
 const Header = () => {
