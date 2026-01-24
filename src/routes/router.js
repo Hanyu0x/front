@@ -37,6 +37,7 @@ import BookmarkedPosts from "../pages/mypage/general/myactivity/BookmarkedPosts"
 import LikedPosts from "../pages/mypage/general/myactivity/LikedPosts";
 import AdminPost from "../pages/mypage/admin/post/AdminPost";
 import ProvideDetail from "../pages/provide/detail/ProvideDetail";
+import CommunityDetail from "../pages/community/detail/CommunityDetail";
 
 const router = createBrowserRouter([
   {
@@ -61,6 +62,11 @@ const router = createBrowserRouter([
       {
         path: "/community",
         element: <CommunityList />
+      },
+      // 커뮤니티 글 상세
+      {
+        path: "/community/detail",
+        element: <CommunityDetail />
       },
       // 안전점수
       {

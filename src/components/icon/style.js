@@ -24,6 +24,11 @@ export const iconMap = {
   "plus-gray": "plus-gray.png",
   "plus-white": "plus-white.png",
   "user-profile": "user-profile.png",
+  "arrow-right": "arrow-right.png",
+  "search": "search.png",
+  "coffee": "coffee.png",
+  "house": "house.png",
+  "pin": "pin.png",
 };
 
 // Icon 스타일 컴포넌트
@@ -31,12 +36,12 @@ export const IconImage = styled.img`
   display: block;
   width: ${({ size }) => {
     if (typeof size === "number") return `${size}px`;
-    const sizes = { xsmall: "12px", small: "16px", medium: "20px", large: "24px" };
+    const sizes = { xsmall: "12px", small: "16px", medium: "20px", large: "24px", xlarge: "28px" };
     return sizes[size] || sizes.medium;
   }};
   height: ${({ size }) => {
     if (typeof size === "number") return `${size}px`;
-    const sizes = { xsmall: "12px", small: "16px", medium: "20px", large: "24px" };
+    const sizes = { xsmall: "12px", small: "16px", medium: "20px", large: "24px", xlarge: "28px" };
     return sizes[size] || sizes.medium;
   }};
   object-fit: contain;

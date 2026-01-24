@@ -4,6 +4,10 @@ import styled from 'styled-components';
 const S = {};
 
 S.HeaderContainer = styled.header`
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
   width: 100%;
   height: 100px;
   background-color: ${({theme}) => theme.PALLETE.background.white};
@@ -24,6 +28,8 @@ S.HeaderInner = styled.div`
   align-items: center;
   padding: 0 20px;
 `;
+
+S.Logo = styled.div``;
 
 S.Img = styled.img`
   width: ${({width}) => width || 'auto'};

@@ -7,6 +7,15 @@ const GlobalStyle = createGlobalStyle`
   /* css 스타일 리셋 */
   ${reset}
 
+  /* 전역 스타일 */
+  * {
+    word-break: keep-all;
+    box-sizing: border-box;
+    text-decoration: none;
+    color: inherit;
+    font-family: 'pretendard';
+  }
+
   /*
     100 Thin
     200 Extra Light

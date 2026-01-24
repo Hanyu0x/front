@@ -38,8 +38,8 @@ const IconButton = ({
     return (
       <BaseButton {...props} backgroundColor={backgroundColor}>
         <ButtonContent $iconPosition={iconPosition}>
-          <Icon name={iconName} src={icon} size={iconSize} color={iconColor} />
           <span>{children}</span>
+          <Icon name={iconName} src={icon} size={iconSize} color={iconColor} />
         </ButtonContent>
       </BaseButton>
     );
