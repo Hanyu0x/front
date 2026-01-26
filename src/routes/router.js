@@ -17,8 +17,8 @@ import AdminMyPageLayout from "../pages/mypage/admin/AdminMyPageLayout";
 import Profile from "../pages/mypage/general/profile/Profile";
 import MyArea from "../pages/mypage/general/myarea/MyArea";
 import MyActivity from "../pages/mypage/general/myactivity/MyActivity";
-import Notify from "../pages/mypage/general/notify/Notify";
-import Setting from "../pages/mypage/general/setting/Setting";
+import MyNotificationPage from "../pages/mypage/general/notify/MyNotificationPage";
+import MySettingPage from "../pages/mypage/general/setting/MySettingPage";
 import Dashboard from "../pages/mypage/admin/dashboard/Dashboard";
 import PostList from "../pages/mypage/admin/post/PostList";
 import WritePost from "../pages/mypage/admin/post/WritePost";
@@ -38,6 +38,7 @@ import LikedPosts from "../pages/mypage/general/myactivity/LikedPosts";
 import AdminPost from "../pages/mypage/admin/post/AdminPost";
 import ProvideDetail from "../pages/provide/detail/ProvideDetail";
 import CommunityDetail from "../pages/community/detail/CommunityDetail";
+
 
 const router = createBrowserRouter([
   {
@@ -102,7 +103,11 @@ const router = createBrowserRouter([
     children:[
       // 프로필
       {
-        path: "",
+        index: true,
+        element: <Profile />
+      },
+      {
+        path: "profile",
         element: <Profile />
       },
       // 내 지역
@@ -145,12 +150,12 @@ const router = createBrowserRouter([
       // 알림
       {
         path: "notify",
-        element: <Notify/>
+        element: <MyNotificationPage/>
       },
       // 설정
       {
         path: "setting",
-        element: <Setting/>
+        element: <MySettingPage/>
       },
     ]
   },

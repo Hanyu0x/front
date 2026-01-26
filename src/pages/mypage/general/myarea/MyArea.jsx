@@ -1,10 +1,9 @@
 import React from 'react';
+import MyRegionPage from './MyRegionPage';
 
 const MyArea = () => {
   return (
-    <div>
-      내 지역 페이지
-    </div>
+    <MyRegionPage />
   );
 };
 
