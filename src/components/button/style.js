@@ -1,361 +1,99 @@
 import styled, { css } from "styled-components";
 
-// 크기 변형
-const sizeCSS = {
-  h1: css`
-    font-size: ${({ theme }) => theme.FONT_SIZE.h1};
-    line-height: ${({ theme }) => theme.FONT_LINE.h1};
-  `,
-  h2: css`
-    font-size: ${({ theme }) => theme.FONT_SIZE.h2};
-    line-height: ${({ theme }) => theme.FONT_LINE.h2};
-  `,
-  h3: css`
-    font-size: ${({ theme }) => theme.FONT_SIZE.h3};
-    line-height: ${({ theme }) => theme.FONT_LINE.h3};
-  `,
-  h4: css`
-    font-size: ${({ theme }) => theme.FONT_SIZE.h4};
-    line-height: ${({ theme }) => theme.FONT_LINE.h4};
-  `,
-  h5: css`
-    font-size: ${({ theme }) => theme.FONT_SIZE.h5};
-    line-height: ${({ theme }) => theme.FONT_LINE.h5};
-  `,  
-  h6: css`
-    font-size: ${({ theme }) => theme.FONT_SIZE.h6};
-    line-height: ${({ theme }) => theme.FONT_LINE.h6};
-  `,
-  h7: css`
-    font-size: ${({ theme }) => theme.FONT_SIZE.h7};
-    line-height: ${({ theme }) => theme.FONT_LINE.h7};
-  `,
-  h8: css`
-    font-size: ${({ theme }) => theme.FONT_SIZE.h8};
-    line-height: ${({ theme }) => theme.FONT_LINE.h8};
-  `,
-  h9: css`
-    font-size: ${({ theme }) => theme.FONT_SIZE.h9};
-    line-height: ${({ theme }) => theme.FONT_LINE.h9};
-  `,
-  medium: css`
-    font-size: ${({ theme }) => theme.FONT_SIZE.medium};
-    line-height: ${({ theme }) => theme.FONT_LINE.medium};
-  `,
-  bttxt: css`
-    font-size: ${({ theme }) => theme.FONT_SIZE.bttxt};
-    line-height: ${({ theme }) => theme.FONT_LINE.bttxt};
-  `,
-  linktxt: css`
-    font-size: ${({ theme }) => theme.FONT_SIZE.linktxt};
-    line-height: ${({ theme }) => theme.FONT_LINE.linktxt};
-  `,
+const colorMap = {
+  primary: "#3461F5",
+  secondary: "#111827",
+  white: "#FFFFFF",
+  gray01: "#F9FAFB",
+  gray02: "#F3F4F6",
+  gray03: "#E5E7EB",
+  gray04: "#D1D5DB",
+  gray05: "#9CA3AF",
+  error: "#EF4444",
+  sky: "#38BDF8",
 };
 
-// padding 변형
-const paddingCSS = {
-  small: css`
-    padding: 6px 16px;
-  `,
-  mediumSmall: css`
-    padding: 10px 16px;
-  `,
-  smallMedium: css`
-    padding: 12px 22px;
-  `,
-  medium: css`
-    padding: 10px 40px;
-  `,
-  large: css`
-    padding: 15px 50px;
-  `,
-  full: css`
-    padding: 16px 0;
-  `,
-  fullWidth: css`
-    width: 100%;
-    padding: 16px 100px;
-  `,
+const sizeMap = {
+  h1: "32px",
+  h2: "28px",
+  h3: "24px",
+  h4: "20px",
+  h5: "18px",
+  h6: "16px",
+  h7: "15px",
+  h8: "14px",
+  h9: "13px",
+  medium: "14px",
+  bttxt: "14px",
+  linktxt: "13px",
 };
 
-// 배경색 변형
-const backgroundColorCSS = {
-  primary: css`
-    background-color: ${({ theme }) => theme.PALLETE.primary};
-  `,
-  secondary: css`
-    background-color: ${({ theme }) => theme.PALLETE.secondary};
-  `,
-  white: css`
-    background-color: ${({ theme }) => theme.PALLETE.white};
-  `,
-  transparent: css`
-    background-color: transparent;
-  `,
-  gray01: css`
-    background-color: ${({ theme }) => theme.PALLETE.gray.greyscale01};
-  `,
-  gray02: css`
-    background-color: ${({ theme }) => theme.PALLETE.gray.greyscale02};
-  `,
-  gray03: css`
-    background-color: ${({ theme }) => theme.PALLETE.gray.greyscale03};
-  `,
-  gray04: css`
-    background-color: ${({ theme }) => theme.PALLETE.gray.greyscale04};
-  `,
-  gray05: css`
-    background-color: ${({ theme }) => theme.PALLETE.gray.greyscale05};
-  `,
+const paddingMap = {
+  small: "4px 10px",
+  mediumSmall: "6px 12px",
+  smallMedium: "8px 12px",
+  medium: "10px 16px",
+  large: "12px 20px",
+  full: "0",
 };
 
-// 폰트 두께
-const fontWeightCSS = {
-  thin: css`
-    font-weight: ${({ theme }) => theme.FONT_WEIGHT.thin};
-  `,
-  extraLight: css`
-    font-weight: ${({ theme }) => theme.FONT_WEIGHT.extraLight};
-  `,
-  light: css`
-    font-weight: ${({ theme }) => theme.FONT_WEIGHT.light};
-  `,
-  regular: css`
-    font-weight: ${({ theme }) => theme.FONT_WEIGHT.regular};
-  `,
-  medium: css`
-    font-weight: ${({ theme }) => theme.FONT_WEIGHT.medium};
-  `,
-  semiBold: css`
-    font-weight: ${({ theme }) => theme.FONT_WEIGHT.semiBold};
-  `,
-  bold: css`
-    font-weight: ${({ theme }) => theme.FONT_WEIGHT.bold};
-  `,
-  extraBold: css`
-    font-weight: ${({ theme }) => theme.FONT_WEIGHT.extraBold};
-  `,
-  black: css`
-    font-weight: ${({ theme }) => theme.FONT_WEIGHT.black};
-  `,
+const shapeMap = {
+  square: "0",
+  rounded: "8px",
+  pill: "999px",
 };
 
-// 색상 변형 (텍스트 색상)
-const colorCSS = {
-  primary: css`
-    color: ${({ theme }) => theme.PALLETE.primary};
-  `,
-  secondary: css`
-    color: ${({ theme }) => theme.PALLETE.secondary};
-  `,
-  white: css`
-    color: ${({ theme }) => theme.PALLETE.white};
-  `,
-  gray01: css`
-    color: ${({ theme }) => theme.PALLETE.gray.greyscale01};
-  `,
-  gray02: css`
-    color: ${({ theme }) => theme.PALLETE.gray.greyscale02};
-  `,
-  gray03: css`
-    color: ${({ theme }) => theme.PALLETE.gray.greyscale03};
-  `,
-  gray04: css`
-    color: ${({ theme }) => theme.PALLETE.gray.greyscale04};
-  `,
-  gray05: css`
-    color: ${({ theme }) => theme.PALLETE.gray.greyscale05};
-  `,
+const borderWidthMap = {
+  thin: "1px",
+  medium: "2px",
+  thick: "3px",
 };
 
-
-
-// 모양 변형
-const shapeCSS = {
-  square: css`
-    border-radius: 4px;
-  `,
-  rounded: css`
-    border-radius: 8px;
-  `,
-  pill: css`
-    border-radius: 30px;
-  `,
+const getColor = (value, theme) => {
+  if (!value) return undefined;
+  if (colorMap[value]) return colorMap[value];
+  if (theme?.PALLETE?.[value]) return theme.PALLETE[value];
+  return value;
 };
 
-// Border 스타일 변형
-const borderCSS = {
-  none: css`
-    border: none;
-  `,
-  primary: css`
-    border: 1px solid ${({ theme }) => theme.PALLETE.primary};
-  `,
-  secondary: css`
-    border: 1px solid ${({ theme }) => theme.PALLETE.secondary};
-  `,
-  gray01: css`
-    border: 1px solid ${({ theme }) => theme.PALLETE.gray.greyscale01};
-  `,
-  gray02: css`
-    border: 1px solid ${({ theme }) => theme.PALLETE.gray.greyscale02};
-  `,
-  gray03: css`
-    border: 1px solid ${({ theme }) => theme.PALLETE.gray.greyscale03};
-  `,
-  gray04: css`
-    border: 1px solid ${({ theme }) => theme.PALLETE.gray.greyscale04};
-  `,
-  gray05: css`
-    border: 1px solid ${({ theme }) => theme.PALLETE.gray.greyscale05};
-  `,
-  white: css`
-    border: 1px solid ${({ theme }) => theme.PALLETE.white};
-  `,
-  error: css`
-    border: 1px solid ${({ theme }) => theme.PALLETE.error};
-  `,
-  sky: css`
-    border: 1px solid ${({ theme }) => theme.PALLETE.sky};
-  `,
-};
-
-// Border 두께 변형
-const borderWidthCSS = {
-  thin: css`
-    border-width: 1px;
-  `,
-  medium: css`
-    border-width: 2px;
-  `,
-  thick: css`
-    border-width: 3px;
-  `,
-};
-
-// 폰트 라인 변형
-const lineHeightCSS = {
-  h1: css`
-    line-height: ${({ theme }) => theme.FONT_LINE.h1};
-  `,
-  h2: css`
-    line-height: ${({ theme }) => theme.FONT_LINE.h2};
-  `,
-  h3: css`
-    line-height: ${({ theme }) => theme.FONT_LINE.h3};
-  `,
-  h4: css`
-    line-height: ${({ theme }) => theme.FONT_LINE.h4};
-  `,
-  h5: css`
-    line-height: ${({ theme }) => theme.FONT_LINE.h5};
-  `,
-  h6: css`
-    line-height: ${({ theme }) => theme.FONT_LINE.h6};
-  `,
-  h7: css`
-    line-height: ${({ theme }) => theme.FONT_LINE.h7};
-  `,
-  h8: css`
-    line-height: ${({ theme }) => theme.FONT_LINE.h8};
-  `,
-  h9: css`
-    line-height: ${({ theme }) => theme.FONT_LINE.h9};
-  `,
-  medium: css`
-    line-height: ${({ theme }) => theme.FONT_LINE.medium};
-  `,
-  bttxt: css`
-    line-height: ${({ theme }) => theme.FONT_LINE.bttxt};
-  `,
-  linktxt: css`
-    line-height: ${({ theme }) => theme.FONT_LINE.linktxt};
-  `,
-};
-
-// IconButton 내부 레이아웃 (아이콘 + 텍스트)
-const ButtonContent = styled.div`
+export const BaseButton = styled.button`
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 6px;
+  width: ${({ fullWidth }) => (fullWidth ? "100%" : "auto")};
+  border-radius: ${({ shape }) => shapeMap[shape] || "6px"};
+  font-size: ${({ size }) => sizeMap[size] || size || "14px"};
+  font-weight: ${({ fontWeight }) => fontWeight || 600};
+  padding: ${({ padding }) => paddingMap[padding] || "8px 12px"};
+  border: ${({ border, borderWidth, theme }) => {
+    if (!border || border === "none") return "none";
+    const width = borderWidthMap[borderWidth] || "1px";
+    return `${width} solid ${getColor(border, theme) || "#D1D5DB"}`;
+  }};
+  color: ${({ color, theme }) => getColor(color, theme) || "#111827"};
+  background-color: ${({ backgroundColor, variant, theme }) => {
+    if (variant === "outline" || variant === "ghost") return "transparent";
+    return getColor(backgroundColor, theme) || "transparent";
+  }};
+  cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
+  opacity: ${({ disabled }) => (disabled ? 0.6 : 1)};
 
+  ${({ variant }) =>
+    variant === "ghost" &&
+    css`
+      border: none;
+    `}
+`;
+
+export const ButtonContent = styled.span`
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   ${({ $iconPosition }) =>
-    $iconPosition === "right" &&
-    css`
-      flex-direction: row-reverse;
-    `}
+    $iconPosition === "right"
+      ? css`
+          flex-direction: row-reverse;
+        `
+      : null}
 `;
-
-const BaseButton = styled.button`
-  display: inline-block;
-  font-weight: ${({ theme }) => theme.FONT_WEIGHT.medium};
-  text-align: center;
-  line-height: 1;
-  cursor: pointer;
-  transition: all 0.2s ease-in-out;
-  
-  /* padding 변형 */
-  ${paddingCSS.medium}
-  ${({ padding }) => padding && paddingCSS[padding]}
-  
-  /* 기본 크기 (medium) */
-  ${sizeCSS.medium}
-  
-  /* 크기 변형 */
-  ${({ size }) => size && sizeCSS[size]}
-  
-  /* 배경색 */
-  ${({ backgroundColor, variant }) => {
-    if (backgroundColor) {
-      return backgroundColorCSS[backgroundColor] || css`background-color: ${backgroundColor};`;
-    }
-    if (variant === "outline" || variant === "ghost") {
-      return backgroundColorCSS.transparent;
-    }
-    return backgroundColorCSS.primary;
-  }}
-  
-  /* 색상 변형 (기본값: primary) */
-  ${({ color }) => color && colorCSS[color]}
-  
-  /* 모양 변형 (기본값: rounded) */
-  ${shapeCSS.rounded}
-  ${({ shape }) => shape && shapeCSS[shape]}
-  
-  /* Border 스타일 (기본값: none) */
-  ${borderCSS.none}
-  ${({ border }) => border && borderCSS[border]}
-  
-  /* 커스텀 border 색상 */
-  ${({ border, theme }) =>
-    border === "white" &&
-    css`
-      border: 1px solid ${theme.PALLETE.white};
-    `}
-  
-  /* Border 두께 (border가 설정된 경우에만 적용) */
-  ${({ borderWidth, border }) =>
-    borderWidth && border && borderWidthCSS[borderWidth]}
-  
-  /* disabled 상태 */
-  &:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-  }
-
-  /* 폰트 두께 */
-  ${({ fontWeight }) => fontWeight && fontWeightCSS[fontWeight]}
-  /* 폰트 라인 */
-  ${({ lineHeight }) => lineHeight && lineHeightCSS[lineHeight]}
-  /* full width 옵션 */
-  ${({ fullWidth }) =>
-    fullWidth &&
-    css`
-      width: 100%;
-    `}
-`;
-
-
-export { BaseButton, ButtonContent };
-export default BaseButton;

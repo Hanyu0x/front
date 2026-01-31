@@ -1,8 +1,7 @@
 import React, { useState, useMemo } from "react";
 import S from "./style";
 import Title from "../../../components/title/Title";
-import BaseButton from "../../../components/button/style";
-
+import { BaseButton } from '../../../components/button/style';
 
 
 // TODO: 나중에 실제 한국 지역 데이터로 교체

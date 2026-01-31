@@ -1,61 +1,28 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
-// 아이콘 맵
 export const iconMap = {
-  bookmark: "bookmark.png",
-  "bookmark-active": "bookmark-active.png",
-  "bookmark-view": "bookmark-view.png",
-  camera: "camera.png",
-  comment: "comment.png",
-  "down-arrow": "down-arrow.png",
-  hits: "hits.png",
   like: "like.png",
-  "like-active": "like-active.png",
-  "mypage-myactivity": "mypage-myactivity.png",
-  "mypage-myactivity-active": "mypage-myactivity-active.png",
-  "mypage-myarea": "mypage-myarea.png",
-  "mypage-myarea-active": "mypage-myarea-active.png",
-  "mypage-notify": "mypage-notify.png",
-  "mypage-notify-active": "mypage-notify-active.png",
-  "mypage-profile": "mypage-profile.png",
-  "mypage-profile-active": "mypage-profile-avtive.png",
-  "mypage-setting": "mypage-setting.png",
-  "mypage-setting-active": "mypage-setting-active.png",
-  "plus-gray": "plus-gray.png",
-  "plus-white": "plus-white.png",
-  "user-profile": "user-profile.png",
+  comment: "comment.png",
+  hits: "hits.png",
+  "bookmark-view": "bookmark-view.png",
+  "bookmark-active": "bookmark-active.png",
   "arrow-right": "arrow-right.png",
-  "search": "search.png",
-  "coffee": "coffee.png",
-  "house": "house.png",
-  "pin": "pin.png",
+  search: "search.png",
+  house: "house.png",
+  "plus-gray": "plus-gray.png",
 };
 
-// Icon 스타일 컴포넌트
+const sizeMap = {
+  xsmall: "12px",
+  small: "16px",
+  medium: "20px",
+  large: "24px",
+};
+
 export const IconImage = styled.img`
-  display: block;
-  width: ${({ size }) => {
-    if (typeof size === "number") return `${size}px`;
-    const sizes = { xsmall: "12px", small: "16px", medium: "20px", large: "24px", xlarge: "28px" };
-    return sizes[size] || sizes.medium;
-  }};
-  height: ${({ size }) => {
-    if (typeof size === "number") return `${size}px`;
-    const sizes = { xsmall: "12px", small: "16px", medium: "20px", large: "24px", xlarge: "28px" };
-    return sizes[size] || sizes.medium;
-  }};
+  width: ${({ size }) => sizeMap[size] || size || "20px"};
+  height: ${({ size }) => sizeMap[size] || size || "20px"};
   object-fit: contain;
-  flex-shrink: 0;
-  ${({ color, theme }) =>
-    color === "white"
-      ? "filter: brightness(0) invert(1);"
-      : color === "black"
-      ? "filter: brightness(0);"
-      : color === "primary"
-      ? css`
-          filter: brightness(0) saturate(100%) ${theme.PALLETE.primary};
-        `
-      : ""}
-  ${({ rotate }) => rotate && `transform: rotate(${rotate}deg);`}
-  ${({ onClick }) => onClick && "cursor: pointer;"}
+  transform: ${({ rotate }) => (rotate ? `rotate(${rotate}deg)` : "none")};
+  cursor: ${({ onClick }) => (onClick ? "pointer" : "default")};
 `;
