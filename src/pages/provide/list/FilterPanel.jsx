@@ -1,4 +1,3 @@
-// FilterPanel.jsx
 import React, { useState, useEffect } from "react";
 import S from "./style";
 import BaseButton from "../../../components/button/BaseButton";
